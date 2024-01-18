@@ -1,16 +1,46 @@
 const containerEl = document.getElementById('container');
 
 function createGrid(input) {
-    let flexBasis = 1/input * 100;
-    for(i=0; i<(input ** 2); i++) {
-        let cell = document.createElement('div');
-        cell.classList.add('divSquare');
-        containerEl.appendChild(cell);
-        cell.style.flex = '0 0 ' + flexBasis +'%';
-        cell.addEventListener('mouseover', function() {
-            cell.style.backgroundColor = 'black';
-        });
+    for (i = 0; i < input; i++) {
+        let row = document.createElement('div');
+        row.classList.add('row');
+        row.style.height = 960/input + "px";
+        
+        for (j = 0; j < input; j++) {
+            let col = document.createElement('div');
+            col.classList.add('col');
+            col.addEventListener('mouseover', function() {
+                col.style.backgroundColor = 'black';
+            });
+            row.appendChild(col);
+        }
+        containerEl.appendChild(row);
     }
 }
 
-createGrid(16);
+function makeGrid() {
+    let gridSize = document.getElementById('gridSize').value
+    if (parseInt(gridSize) <= 64 && parseInt(gridSize) >= 4) {
+    containerEl.replaceChildren();
+    
+    createGrid(gridSize);
+} else {
+    alert('Enter a value between 4 & 64');
+}
+}
+
+function randomInteger(max) {
+    return Math.floor(Math.random()*(max + 1));
+}
+
+function makeRainbow() {
+    let r = randomInteger(255);
+    let g = randomInteger(255);
+    let b = randomInteger(255);
+    let rgb = document.querySelectorAll('.col');
+    rgb.forEach(function(elem) {
+    elem.addEventListener('mouseover', function() {
+        elem.style.backgroundColor = 'rgb(' + r + ', ' + g + ', ' + b + ')';
+    });
+});
+}

@@ -1,18 +1,28 @@
 body {
     background-color: burlywood;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    
+}
+
+#heading {
+    font-size: 100px;
+    font-weight: 900;
+    color: brown;
+    text-align: center;
+    padding: 60px;
 }
 
 #container {
     background-color: white;
     height: 960px;
     width: 960px;
-    display: flex;
-    flex-wrap: wrap;
+    margin: auto;
 }
 
-.divSquare {
+.row {
+    display: flex;
+}
+
+.col {
     border: 1px solid black;
+    flex: 1;
 }
