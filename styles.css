@@ -1,5 +1,21 @@
 body {
     background-color: burlywood;
+    display: flex;
+    /* flex-direction: row; */
+}
+
+.column-1, .column-3 {
+    flex-direction: column;
+    width: 25%;
+}
+
+.column-1 {
+    margin: auto;
+    margin-right: 5px;
+}
+
+.column-2 {
+    flex-direction: column;
     
 }
 
@@ -7,8 +23,9 @@ body {
     font-size: 100px;
     font-weight: 900;
     color: brown;
-    text-align: center;
+    justify-content: center;
     padding: 60px;
+    display: flex;
 }
 
 #container {
@@ -18,8 +35,40 @@ body {
     margin: auto;
 }
 
+button {
+    padding: 10px;
+    border-radius: 15px;
+    background-color: brown;
+    color: antiquewhite;
+    font-size: 20px;
+    font-weight: bolder;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    color: brown;
+    background-color: antiquewhite;
+}
+
+input {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    /* box-sizing: border-box; */
+    border-radius: 5px;
+    border: none;
+}
+
+input[type=text]:focus {
+    border: none;
+    background-color: antiquewhite;
+}
+
+
 .row {
     display: flex;
+    flex-direction: row;
 }
 
 .col {

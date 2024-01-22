@@ -38,9 +38,9 @@ function makeRainbow() {
     let g = randomInteger(255);
     let b = randomInteger(255);
     let rgb = document.querySelectorAll('.col');
-    rgb.forEach(function(elem) {
-    elem.addEventListener('mouseover', function() {
-        elem.style.backgroundColor = 'rgb(' + r + ', ' + g + ', ' + b + ')';
+    for (const color of rgb) {
+    color.addEventListener('mouseover', function() {
+        color.style.backgroundColor = 'rgb(' + r + ', ' + g + ', ' + b + ')';
     });
-});
+}
 }
